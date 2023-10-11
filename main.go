@@ -81,12 +81,12 @@ var connectLostHandler mqtt.ConnectionLostHandler = func(client mqtt.Client, err
 }
 
 func main() {
-  var broker = "tls://3a3bd399e18940d5a6ce7b2b9d8476d0.s1.eu.hivemq.cloud" // find the host name in the Overview of your cluster (see readme)
+  var broker = "3a3bd399e18940d5a6ce7b2b9d8476d0.s1.eu.hivemq.cloud" // find the host name in the Overview of your cluster (see readme)
   var port = 8883            // find the port right under the host name, standard is 8883
   opts := mqtt.NewClientOptions()
   opts.AddBroker(fmt.Sprintf("tls://%s:%d", broker, port))
   opts.SetClientID("testCred") // set a name as you desire
-  opts.SetUsername("avatrix")    // these are the credentials that you declare for your cluster
+  opts.SetUsername("testCred")    // these are the credentials that you declare for your cluster
   opts.SetPassword("@Testcred1")
   // (optionally) configure callback handlers that get called on certain events
   opts.SetDefaultPublishHandler(messagePubHandler)
